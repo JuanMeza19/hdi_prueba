@@ -288,4 +288,7 @@ npm run start:client:app
 npm run start:dev:app
 ```
 
+> **Nota:** Esperar un momento para que se ejecuten los servicios ( API y cliente ) .
+
+
 Con estos pasos, la base de datos se iniciará en un contenedor de Docker, el backend de NestJS se ejecutará en modo `watch` para reflejar cambios en caliente y el frontend en React estará disponible en modo desarrollo. 🚀
