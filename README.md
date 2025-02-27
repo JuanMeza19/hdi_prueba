@@ -9,7 +9,7 @@
 - Docker
 - visual Studio Code: [(https://code.visualstudio.com/)](https://code.visualstudio.com/).
 
-Seguir Leyendo el Readme.
+SEGUIR LEYENDO EL README.
 
 ---
 
@@ -252,7 +252,7 @@ Con estos scripts, el flujo de desarrollo será más eficiente y organizado. �
 
 Para ejecutar correctamente la aplicación en un entorno de desarrollo, sigue estos pasos:
 
-1️⃣ **Instalar dependencias**
+1️⃣ **Instalar dependencias (✅ ASEGURARSE QUE ESTE EN LA CARPETA RAIZ DE LA APP YA QUE PUEDE DAR UN ERROR AL INSTALAR DEPENDENCIAS)** 
 ```sh
 npm install
 ```
@@ -273,17 +273,17 @@ cd ..
 docker-compose up -d
 ```
 
-5️⃣ **Ejecutar el backend en modo desarrollo**
+5️⃣ **Ejecutar el backend en modo desarrollo (api)**
 ```sh
 npm run start:dev
 ```
 
-6️⃣ **Ejecutar el frontend**
+6️⃣ **Ejecutar el frontend (cliente)**
 ```sh
 npm run start:client:app
 ```
 
-7️⃣ **Ejecutar backend y frontend simultáneamente(Recomendado)**
+7️⃣ **Ejecutar backend y frontend simultáneamente (✅ RECOMENDADO)**
 ```sh
 npm run start:dev:app
 ```
