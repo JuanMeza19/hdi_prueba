@@ -7,6 +7,7 @@
 - Node.js (versión 20.16.0(Recomendado) o superior)
 - npm (viene incluido con Node.js)
 - Docker
+- visual Studio Code: [(https://code.visualstudio.com/)](https://code.visualstudio.com/).
 
 Seguir Leyendo el Readme.
 
