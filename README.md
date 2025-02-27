@@ -1,5 +1,17 @@
 # README
 
+> **Nota:** Para poder correr el proyecto, es necesario tener instalado **Node.js**, **npm** y **Docker**.
+
+## Requisitos
+
+- Node.js (versión 20.16.0(Recomendado) o superior)
+- npm (viene incluido con Node.js)
+- Docker
+
+Seguir Leyendo el Readme.
+
+---
+
 ## Estructura del Proyecto y MVC
 Este proyecto usa **NestJS** para el backend y **React** para el frontend. A continuación, se explican las carpetas y la arquitectura MVC utilizada.
 
@@ -95,6 +107,39 @@ Una vez creada la base de datos y ejecutado el servicio, se puede llamar al proc
 CALL ObtenerTodosLosEstados();
 ```
 Esto devolverá todos los registros de la tabla `tb_estados`.
+
+---
+
+## 🛠️ Instalación de Node.js en Windows
+
+Sigue estos pasos para instalar **Node.js versión 20.16.0** en tu computadora con Windows:
+
+### 1. Descargar Node.js
+1. **Abre tu navegador** y ve al sitio oficial de Node.js: [https://nodejs.org](https://nodejs.org).
+2. Busca la sección de **"Descargas"** (Downloads).
+3. Haz clic en el botón que dice **"Windows Installer"** para descargar la versión 20.16.0 de Node.js.
+
+   > 💡 Si no encuentras la versión 20.16.0 directamente, visita el enlace de descarga específico: [Node.js 20.16.0](https://nodejs.org/dist/v20.16.0/). Descarga el archivo que termina en `.msi` (por ejemplo, `node-v20.16.0-x64.msi`).
+
+---
+
+### 2. Instalar Node.js
+1. **Abre el archivo descargado** (el archivo `.msi` que acabas de descargar).
+2. Sigue los pasos del instalador:
+   - Haz clic en **"Next"** (Siguiente) en cada pantalla.
+   - Acepta los términos y condiciones.
+   - Selecciona la carpeta donde quieres instalar Node.js (puedes dejar la carpeta predeterminada).
+   - Asegúrate de que la opción **"Automatically install the necessary tools"** esté marcada.
+   - Haz clic en **"Install"** (Instalar) y espera a que termine la instalación.
+
+---
+
+### 3. Verificar la instalación
+1. **Abre la terminal** de Windows:
+   - Presiona `Win + R`, escribe `cmd` y presiona `Enter`.
+2. Escribe el siguiente comando para verificar la versión de Node.js instalada:
+   ```bash
+   node -v
 
 ---
 
