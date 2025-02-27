@@ -67,6 +67,37 @@ Con esta estructura, el proyecto mantiene una organización clara y modular, fac
 
 ---
 
+## 🗃️ DatabaseSeederService (Seeder y Procedimientos Almacenados)
+
+El servicio `DatabaseSeederService` es responsable de insertar datos iniciales en la base de datos y crear procedimientos almacenados.
+
+### 🔹 Funcionamiento
+Este servicio implementa la interfaz `OnModuleInit`, lo que significa que se ejecutará automáticamente al iniciarse el módulo donde está definido.
+
+### 📌 Métodos principales
+
+#### 1️⃣ `onModuleInit()`
+- Llama a los métodos `insertEstados()` y `createStoredProcedure()` al iniciar el módulo.
+
+#### 2️⃣ `insertEstados()`
+- Verifica si los estados ya existen en la base de datos.
+- Si no existen, los inserta en la tabla `tb_estados`.
+- Imprime en consola cada estado insertado.
+
+#### 3️⃣ `createStoredProcedure()`
+- Borra el procedimiento almacenado `ObtenerTodosLosEstados` si ya existe.
+- Crea un nuevo procedimiento almacenado en MySQL que selecciona todos los registros de la tabla `tb_estados`.
+- Muestra un mensaje en consola cuando se crea correctamente.
+
+### 🛠 Uso del Stored Procedure
+Una vez creada la base de datos y ejecutado el servicio, se puede llamar al procedimiento almacenado con el siguiente comando en MySQL:
+```sql
+CALL ObtenerTodosLosEstados();
+```
+Esto devolverá todos los registros de la tabla `tb_estados`.
+
+---
+
 ## 🐳 Uso de Docker Compose
 Este proyecto incluye un archivo `docker-compose.yml` en la raíz para levantar un contenedor de MySQL 5.7 de manera rápida y sencilla.
 
@@ -100,6 +131,23 @@ volumes:
    docker-compose up -d
    ```
    Esto iniciará el contenedor de MySQL en segundo plano.
+
+  ## 🛠 Instalación de Docker en Windows
+Para ejecutar Docker en Windows, sigue estos pasos:
+
+1. Descarga e instala **Docker Desktop** desde el sitio oficial: [Docker Desktop para Windows](https://www.docker.com/products/docker-desktop/).
+2. Habilita la **virtualización** en la BIOS si es necesario.
+3. Asegúrate de que **WSL 2** esté instalado y configurado correctamente.
+4. Reinicia tu computadora y abre Docker Desktop.
+5. Verifica que Docker esté funcionando ejecutando en la terminal:
+   ```sh
+   docker --version
+   ```
+   Esto debería mostrar la versión instalada de Docker.
+
+Para más información sobre instalación y configuración, consulta la documentación oficial: [Guía de instalación de Docker](https://docs.docker.com/get-docker/).
+
+Con estos pasos, Docker estará listo para usar en Windows. 🚀
 
 ### 🔄 Comandos Útiles
 - Para detener el contenedor:
@@ -152,3 +200,46 @@ npm run start:dev:app
 
 Con estos scripts, el flujo de desarrollo será más eficiente y organizado. 🚀
 
+---
+
+## 🚀 Resumen para ejecutar la aplicación en modo desarrollo
+
+Para ejecutar correctamente la aplicación en un entorno de desarrollo, sigue estos pasos:
+
+1️⃣ **Instalar dependencias**
+```sh
+npm install
+```
+   
+2️⃣ **Instalar dependencias del cliente**
+```sh
+cd react-client
+npm install
+```
+
+3️⃣ **Regresar a la carpeta raiz HDI**
+```sh
+cd ..
+```
+
+4️⃣ **Iniciar la base de datos con Docker Compose**
+```sh
+docker-compose up -d
+```
+
+5️⃣ **Ejecutar el backend en modo desarrollo**
+```sh
+npm run start:dev
+```
+
+6️⃣ **Ejecutar el frontend**
+```sh
+npm run start:client:app
+```
+
+7️⃣ **Ejecutar backend y frontend simultáneamente(Recomendado)**
+```sh
+npm run start:dev:app
+```
+
+Con estos pasos, la base de datos se iniciará en un contenedor de Docker, el backend de NestJS se ejecutará en modo `watch` para reflejar cambios en caliente y el frontend en React estará disponible en modo desarrollo. 🚀
